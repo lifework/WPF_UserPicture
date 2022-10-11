@@ -4,7 +4,11 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding AccountName.Value}" Height="350" Width="525" >
-    <StackPanel>
-        <Image Source="{Binding UserPicture.Value}" Width="256" Height="256"/>
+    <StackPanel VerticalAlignment="Center">
+        <Image Source="{Binding UserPicture.Value}" Width="64" Height="64"/>
+        <TextBlock TextAlignment="Center">
+            <Run Text="AccountName: "/>
+            <Run Text="{Binding AccountName.Value}" />
+        </TextBlock>
     </StackPanel>
 </Window>
