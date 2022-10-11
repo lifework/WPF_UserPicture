@@ -3,6 +3,7 @@ using Reactive.Bindings;
 using System;
 using System.Linq;
 using System.Windows.Media.Imaging;
+using Windows.Storage.Streams;
 using Windows.System;
 
 namespace WPF_UserPicture.ViewModels
@@ -24,6 +25,8 @@ namespace WPF_UserPicture.ViewModels
             if (user == null) { return; }
 
             AccountName.Value = await user.GetPropertyAsync(KnownUserProperties.AccountName) as string;
+
+            IRandomAccessStreamReference streamReference = await user.GetPictureAsync(UserPictureSize.Size208x208);
         }
     }
 }
