@@ -1,4 +1,6 @@
 ﻿using Prism.Mvvm;
+using Reactive.Bindings;
+using System.Windows.Media.Imaging;
 
 namespace WPF_UserPicture.ViewModels
 {
@@ -11,7 +13,14 @@ namespace WPF_UserPicture.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+        public ReactivePropertySlim<BitmapImage> UserPicture { get; set; } = new();
+
         public MainWindowViewModel()
+        {
+
+        }
+
+        private void SetUserPicture()
         {
 
         }
